@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+<title>Debapratim Mishra — Aspiring DevOps Engineer</title>
+<meta name="description" content="Debapratim Mishra — Aspiring DevOps Engineer. A desktop-inspired portfolio built with HTML, CSS & JavaScript." />
+<meta name="theme-color" content="#15132b" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23ffb454%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 text-anchor=%22middle%22 font-family=%22monospace%22 fill=%22%2315132b%22>D</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ===== BOOT SCREEN ===== -->
+<div id="boot-screen" aria-hidden="true">
+  <div class="boot-logo">D</div>
+  <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+  <div class="boot-text">booting debapratim-os …</div>
+</div>
+
+<!-- ===== MENU BAR ===== -->
+<header class="menubar">
+  <div class="menubar-left">
+    <span class="menubar-logo" aria-hidden="true">◆</span>
+    <span class="menubar-app-name">debapratim-os</span>
+    <nav class="menubar-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="menubar-right">
+    <span class="menubar-battery" title="Always charged, always learning">🔋 100%</span>
+    <span class="menubar-clock" id="menubar-clock">--:--</span>
+  </div>
+</header>
+
+<!-- ===== DESKTOP ===== -->
+<main class="desktop" id="desktop">
+
+  <!-- Desktop icons (top-left, like a real desktop) -->
+  <div class="desktop-icons" aria-hidden="true">
+    <button class="desktop-icon" data-open="window-about">
+      <span class="desktop-icon-glyph">🗂️</span><span>About.app</span>
+    </button>
+    <button class="desktop-icon" data-open="window-skills">
+      <span class="desktop-icon-glyph">📊</span><span>Monitor.app</span>
+    </button>
+    <button class="desktop-icon" data-open="window-projects">
+      <span class="desktop-icon-glyph">📁</span><span>Projects</span>
+    </button>
+    <button class="desktop-icon" data-open="window-contact">
+      <span class="desktop-icon-glyph">✉️</span><span>Mail.app</span>
+    </button>
+  </div>
+
+  <!-- ===== WINDOW: TERMINAL (hero) ===== -->
+  <section class="window window-terminal is-open" id="window-terminal" data-window>
+    <div class="window-titlebar" data-drag-handle>
+      <span class="traffic-lights">
+        <button class="dot dot-close" data-close="window-terminal" aria-label="Close"></button>
+        <button class="dot dot-min" aria-label="Minimize" disabled></button>
+        <button class="dot dot-max" aria-label="Maximize" disabled></button>
+      </span>
+      <span class="window-title">guest@debapratim-os — zsh — 80×24</span>
+    </div>
+    <div class="window-body terminal-body">
+      <pre id="terminal-output" class="terminal-output" aria-live="polite"></pre>
+      <span class="terminal-cursor" id="terminal-cursor">▍</span>
+    </div>
+  </section>
+
+  <!-- ===== WINDOW: ABOUT (Finder) ===== -->
+  <section class="window window-about" id="window-about" data-window>
+    <div class="window-titlebar" data-drag-handle>
+      <span class="traffic-lights">
+        <button class="dot dot-close" data-close="window-about" aria-label="Close"></button>
+        <button class="dot dot-min" aria-label="Minimize" disabled></button>
+        <button class="dot dot-max" aria-label="Maximize" disabled></button>
+      </span>
+      <span class="window-title">About — Finder</span>
+    </div>
+    <div class="window-body about-body" id="about" tabindex="-1">
+      <div class="about-avatar" aria-hidden="true">DM</div>
+      <h1 class="about-name" id="about-name">Debapratim Mishra</h1>
+      <p class="about-role" id="about-role">Aspiring DevOps Engineer</p>
+      <p class="about-bio" id="about-bio">
+        Edit this paragraph in <code>js/script.js</code> → <code>CONFIG.bio</code>.
+        Write 2–3 sentences about what you're learning, what kind of problems you like solving
+        (automation, infrastructure, CI/CD pipelines), and what you're aiming for next.
+      </p>
+      <div class="about-links">
+        <a href="#" id="link-github" class="pill-link" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="#" id="link-linkedin" class="pill-link" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="#" id="link-resume" class="pill-link pill-link-accent" target="_blank" rel="noopener">Resume (PDF) ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WINDOW: SKILLS (Activity Monitor) ===== -->
+  <section class="window window-skills" id="window-skills" data-window>
+    <div class="window-titlebar" data-drag-handle>
+      <span class="traffic-lights">
+        <button class="dot dot-close" data-close="window-skills" aria-label="Close"></button>
+        <button class="dot dot-min" aria-label="Minimize" disabled></button>
+        <button class="dot dot-max" aria-label="Maximize" disabled></button>
+      </span>
+      <span class="window-title">Activity Monitor — Skills</span>
+    </div>
+    <div class="window-body skills-body" id="skills" tabindex="-1">
+      <p class="skills-note">% = comfort level, not certification. Edit honestly in <code>CONFIG.skills</code>.</p>
+      <div id="skills-list" class="skills-list"><!-- injected by script.js --></div>
+    </div>
+  </section>
+
+  <!-- ===== WINDOW: PROJECTS (Finder) ===== -->
+  <section class="window window-projects" id="window-projects" data-window>
+    <div class="window-titlebar" data-drag-handle>
+      <span class="traffic-lights">
+        <button class="dot dot-close" data-close="window-projects" aria-label="Close"></button>
+        <button class="dot dot-min" aria-label="Minimize" disabled></button>
+        <button class="dot dot-max" aria-label="Maximize" disabled></button>
+      </span>
+      <span class="window-title">Projects — Finder</span>
+    </div>
+    <div class="window-body projects-body" id="projects" tabindex="-1">
+      <div id="projects-grid" class="projects-grid"><!-- injected by script.js --></div>
+    </div>
+  </section>
+
+  <!-- ===== WINDOW: CONTACT (Mail) ===== -->
+  <section class="window window-contact" id="window-contact" data-window>
+    <div class="window-titlebar" data-drag-handle>
+      <span class="traffic-lights">
+        <button class="dot dot-close" data-close="window-contact" aria-label="Close"></button>
+        <button class="dot dot-min" aria-label="Minimize" disabled></button>
+        <button class="dot dot-max" aria-label="Maximize" disabled></button>
+      </span>
+      <span class="window-title">New Message — Mail</span>
+    </div>
+    <div class="window-body contact-body" id="contact" tabindex="-1">
+      <div class="mail-field"><span>To:</span><span id="contact-email">your-email@example.com</span></div>
+      <div class="mail-field"><span>Subject:</span><span>Let's connect</span></div>
+      <hr class="mail-divider" />
+      <p class="mail-text">
+        Reachable fastest on LinkedIn — feel free to also drop a star on the repo below if you like the build.
+      </p>
+      <div class="about-links">
+        <a href="#" id="contact-mail-btn" class="pill-link pill-link-accent">Send an email ↗</a>
+        <a href="#" id="contact-linkedin-btn" class="pill-link" target="_blank" rel="noopener">Message on LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== DOCK ===== -->
+<nav class="dock" aria-label="Dock">
+  <button class="dock-item" data-open="window-terminal" title="Terminal">
+    <span class="dock-icon dock-icon-terminal">&gt;_</span>
+    <span class="dock-label">Terminal</span>
+  </button>
+  <button class="dock-item" data-open="window-about" title="About">
+    <span class="dock-icon dock-icon-about">🗂️</span>
+    <span class="dock-label">About</span>
+  </button>
+  <button class="dock-item" data-open="window-skills" title="Skills">
+    <span class="dock-icon dock-icon-skills">📊</span>
+    <span class="dock-label">Skills</span>
+  </button>
+  <button class="dock-item" data-open="window-projects" title="Projects">
+    <span class="dock-icon dock-icon-projects">📁</span>
+    <span class="dock-label">Projects</span>
+  </button>
+  <button class="dock-item" data-open="window-contact" title="Contact">
+    <span class="dock-icon dock-icon-contact">✉️</span>
+    <span class="dock-label">Contact</span>
+  </button>
+  <span class="dock-divider" aria-hidden="true"></span>
+  <a class="dock-item" id="dock-github" href="#" target="_blank" rel="noopener" title="GitHub">
+    <span class="dock-icon dock-icon-github">GH</span>
+    <span class="dock-label">GitHub</span>
+  </a>
+  <a class="dock-item" id="dock-linkedin" href="#" target="_blank" rel="noopener" title="LinkedIn">
+    <span class="dock-icon dock-icon-linkedin">in</span>
+    <span class="dock-label">LinkedIn</span>
+  </a>
+</nav>
+
+<script src="js/script.js"></script>
+</body>
+</html>
